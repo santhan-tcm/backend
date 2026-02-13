@@ -57,3 +57,4 @@ startup_error.txt
 fix_log.txt
 fix_log_py.txt
 server_status.txt
+!requirements.txt
