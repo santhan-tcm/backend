@@ -1,0 +1,59 @@
+# ============================================
+# ISO 20022 Validator - Git Ignore File
+# ============================================
+
+# ===== Python Backend =====
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+iso_validator.db
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+*.txt
+logs/
+startup_error.txt
+fix_log.txt
+fix_log_py.txt
+server_status.txt

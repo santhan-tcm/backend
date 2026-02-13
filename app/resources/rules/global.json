@@ -1,0 +1,44 @@
+[
+    {
+        "rule_id": "L3_CURRENCY_001",
+        "description": "Currency Decimal Precision Check",
+        "type": "currency_amount",
+        "selector": ".*Amt$",
+        "severity": "ERROR",
+        "layer": 3
+    },
+    {
+        "rule_id": "E001",
+        "description": "Town name mandatory for post-Nov 2026 messages",
+        "type": "expression",
+        "expression": "check_address(KEY)",
+        "selector": ".*PstlAdr$",
+        "severity": "ERROR",
+        "layer": 3
+    },
+    {
+        "rule_id": "W005",
+        "description": "Instruction ID is unusually long",
+        "type": "expression",
+        "expression": "len(str(VALUE)) <= 35",
+        "selector": ".*InstrId$",
+        "severity": "WARNING",
+        "layer": 3
+    },
+    {
+        "rule_id": "L4_BIC_DIRECTORY_001",
+        "description": "BIC Existence in SWIFT Directory",
+        "type": "bic",
+        "selector": ".*BIC.*|.*AnyBIC.*",
+        "severity": "WARNING",
+        "layer": 4
+    },
+    {
+        "rule_id": "L5_URGENT_DATE_001",
+        "description": "Urgent payments should normally be settled on the current date.",
+        "type": "expression",
+        "expression": "not (exists('SvcLvl.Cd') and 'URGT' in str(DATA.get('SvcLvl.Cd'))) or DATA.get('IntrBkSttlmDt') == datetime.now().strftime('%Y-%m-%d')",
+        "severity": "WARNING",
+        "layer": 5
+    }
+]

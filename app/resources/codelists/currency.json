@@ -1,0 +1,35 @@
+{
+    "name": "Currency Code List (ISO 4217)",
+    "currencies": {
+        "USD": 2,
+        "EUR": 2,
+        "GBP": 2,
+        "JPY": 0,
+        "INR": 2,
+        "BHD": 3,
+        "OMR": 3,
+        "CHF": 2,
+        "CAD": 2,
+        "AUD": 2,
+        "SGD": 2,
+        "AED": 2,
+        "SAR": 2,
+        "ZAR": 2
+    },
+    "codes": [
+        "USD",
+        "EUR",
+        "GBP",
+        "JPY",
+        "INR",
+        "BHD",
+        "OMR",
+        "CHF",
+        "CAD",
+        "AUD",
+        "SGD",
+        "AED",
+        "SAR",
+        "ZAR"
+    ]
+}

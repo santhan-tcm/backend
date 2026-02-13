@@ -1,0 +1,28 @@
+[
+    {
+        "rule_id": "CBPR_001",
+        "description": "If Settlement Method is CLRG, Clearing System Code is mandatory.",
+        "condition": "exists(Document.CdtTrfTxInf.SttlmInf.SttlmMtd) and Document.CdtTrfTxInf.SttlmInf.SttlmMtd == 'CLRG'",
+        "mandatory_fields": [
+            "Document.CdtTrfTxInf.SttlmInf.ClrSys.Cd"
+        ],
+        "severity": "ERROR",
+        "layer": 3
+    },
+    {
+        "rule_id": "CBPR_002",
+        "description": "Interbank Settlement Amount must be greater than zero.",
+        "condition": "exists(Document.CdtTrfTxInf.IntrBkSttlmAmt)",
+        "expression": "float(Document.CdtTrfTxInf.IntrBkSttlmAmt) > 0",
+        "severity": "ERROR",
+        "layer": 3
+    },
+    {
+        "rule_id": "CBPR_003",
+        "description": "Instructing Agent and Instructed Agent should not be the same (Loop check).",
+        "condition": "exists(Document.CdtTrfTxInf.InstgAgt.FinInstnId.BICFI) and exists(Document.CdtTrfTxInf.InstdAgt.FinInstnId.BICFI)",
+        "expression": "Document.CdtTrfTxInf.InstgAgt.FinInstnId.BICFI != Document.CdtTrfTxInf.InstdAgt.FinInstnId.BICFI",
+        "severity": "WARNING",
+        "layer": 4
+    }
+]
